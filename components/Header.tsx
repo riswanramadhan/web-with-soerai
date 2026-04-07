@@ -48,14 +48,10 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    if (menuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.classList.toggle("no-scroll", menuOpen);
 
     return () => {
-      document.body.style.overflow = "";
+      document.body.classList.remove("no-scroll");
     };
   }, [menuOpen]);
 
@@ -126,7 +122,7 @@ export default function Header() {
           }`}
         >
           <Link href="#hero" aria-label="WITH SOERAI Home" className="shrink-0" onClick={closeMobileMenu}>
-            <Logo className="block h-auto w-[100px] sm:w-[120px]" />
+            <Logo className="block h-auto w-[100px] sm:w-[120px]" priority />
           </Link>
 
           <nav className="hidden items-center gap-6 lg:flex">

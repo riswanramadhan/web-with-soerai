@@ -8,6 +8,7 @@ interface BotanicalDecoProps {
   label?: string;
   duration?: number;
   delay?: number;
+  priority?: boolean;
 }
 
 const BOTANICAL_IMAGE_BY_LABEL: Record<string, string> = {
@@ -35,6 +36,7 @@ export default function BotanicalDeco({
   label = "Botanical Deco",
   duration,
   delay,
+  priority = false,
 }: BotanicalDecoProps) {
   const imageSrc = BOTANICAL_IMAGE_BY_LABEL[label];
   const timing = BOTANICAL_TIMING_BY_LABEL[label] ?? { duration: 9.6, delay: 0.4 };
@@ -63,6 +65,9 @@ export default function BotanicalDeco({
           alt=""
           width={220}
           height={220}
+          sizes="(min-width: 1280px) 220px, (min-width: 1024px) 168px, 132px"
+          priority={priority}
+          loading={priority ? "eager" : "lazy"}
           className="h-auto w-full object-contain"
         />
       ) : (

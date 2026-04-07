@@ -52,7 +52,6 @@ html {
   background: var(--cream);
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
 }
 
 * {
@@ -65,7 +64,6 @@ body {
   min-height: 100svh;
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
   background: linear-gradient(
     165deg,
     rgba(226, 106, 138, 0.24) 0%,

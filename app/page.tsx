@@ -12,8 +12,8 @@ export default function Home() {
   return (
     <>
       <Header />
-      <div className="relative">
-        <main className="relative overflow-hidden">
+      <div className="relative overflow-x-clip">
+        <main className="relative overflow-x-clip">
           <HeroSection />
           <AboutSection />
           <VisionMissionSection />

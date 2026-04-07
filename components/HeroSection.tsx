@@ -52,7 +52,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[100svh] items-center overflow-hidden px-4 pb-16 pt-16 sm:px-6 sm:pt-20 lg:px-8"
+      className="relative flex min-h-[100svh] items-center overflow-x-hidden px-4 pb-16 pt-16 sm:px-6 sm:pt-20 lg:px-8"
     >
       <div
         aria-hidden="true"
@@ -65,6 +65,7 @@ export default function HeroSection() {
           label="Leaf 01"
           duration={8.9}
           delay={0.2}
+          priority
         />
       </div>
       
@@ -74,6 +75,7 @@ export default function HeroSection() {
           label="Flower 02"
           duration={9.6}
           delay={0.65}
+          priority
         />
       </div>
       
