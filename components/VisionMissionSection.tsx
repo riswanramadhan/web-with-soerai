@@ -48,12 +48,14 @@ export default function VisionMissionSection() {
             {...reveal("left", 0.05)}
             className="interactive-card shimmer-border relative overflow-hidden rounded-3xl border border-white/35 bg-[linear-gradient(135deg,var(--pink-primary),var(--burgundy))] p-7 text-[var(--cream)] shadow-[0_22px_38px_rgba(112,23,50,0.28)]"
           >
-            <motion.div
-              {...reveal("left", 0.08)}
-              className="relative z-10 mb-5 inline-flex size-20 shrink-0 items-center justify-center rounded-2xl border border-white/35 bg-white/12 text-white shadow-[0_10px_24px_rgba(40,10,24,0.25)] backdrop-blur-sm"
-            >
-              <Target className="size-10 shrink-0" strokeWidth={2.2} />
-            </motion.div>
+            <div className="relative z-30 mb-5 inline-flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl border border-white/35 bg-white/12 text-white shadow-[0_10px_24px_rgba(40,10,24,0.25)] backdrop-blur-sm">
+              <Target
+                aria-hidden="true"
+                className="h-10 w-10 shrink-0 text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.22)]"
+                color="#fff"
+                strokeWidth={2.4}
+              />
+            </div>
             <motion.h3
               {...reveal("left", 0.12)}
               className="relative z-10 font-subheading text-2xl font-semibold uppercase tracking-[0.12em] text-white"
