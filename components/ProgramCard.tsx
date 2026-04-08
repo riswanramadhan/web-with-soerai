@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Compass, Eye, Rocket, Sparkles } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 
 interface ProgramCardProps {
@@ -69,7 +69,22 @@ export function ProgramCard({
   outcomes,
 }: ProgramCardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const { language } = useLanguage();
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+    const syncViewport = () => {
+      setIsMobile(mediaQuery.matches);
+    };
+
+    syncViewport();
+    mediaQuery.addEventListener("change", syncViewport);
+
+    return () => {
+      mediaQuery.removeEventListener("change", syncViewport);
+    };
+  }, []);
 
   const detailLabel = language === "id" ? "Lihat Detail →" : "View Details →";
   const backLabel = language === "id" ? "← Kembali" : "← Back";
@@ -78,13 +93,19 @@ export function ProgramCard({
   const overlineLabel = language === "id" ? "Program Unggulan" : "Featured Program";
   const scrollClassName = isFlipped ? "overflow-y-auto" : "overflow-hidden";
   const iconKey = resolveProgramIconKey(programId, title);
+  const frontRotateY = isMobile ? 0 : isFlipped ? 180 : 0;
+  const backRotateY = isMobile ? 0 : isFlipped ? 0 : -180;
+  const flipTransition = {
+    duration: isMobile ? 0.36 : 0.68,
+    ease: [0.22, 1, 0.36, 1] as const,
+  };
 
   return (
     <div style={{ perspective: "1200px" }} className="h-full w-full">
       <div
         style={{
-          transformStyle: "preserve-3d",
-          WebkitTransformStyle: "preserve-3d",
+          transformStyle: isMobile ? "flat" : "preserve-3d",
+          WebkitTransformStyle: isMobile ? "flat" : "preserve-3d",
           position: "relative",
           height: "100%",
         }}
@@ -92,13 +113,13 @@ export function ProgramCard({
       >
         <motion.div
           initial={false}
-          animate={{ rotateY: isFlipped ? 180 : 0, opacity: isFlipped ? 0 : 1 }}
-          transition={{ duration: 0.68, ease: [0.22, 1, 0.36, 1] }}
+          animate={{ rotateY: frontRotateY, opacity: isFlipped ? 0 : 1 }}
+          transition={flipTransition}
           style={{
-            transformStyle: "preserve-3d",
-            WebkitTransformStyle: "preserve-3d",
-            backfaceVisibility: "hidden",
-            WebkitBackfaceVisibility: "hidden",
+            transformStyle: isMobile ? "flat" : "preserve-3d",
+            WebkitTransformStyle: isMobile ? "flat" : "preserve-3d",
+            backfaceVisibility: isMobile ? "visible" : "hidden",
+            WebkitBackfaceVisibility: isMobile ? "visible" : "hidden",
             transformOrigin: "center center",
             pointerEvents: isFlipped ? "none" : "auto",
             willChange: "transform, opacity",
@@ -123,6 +144,7 @@ export function ProgramCard({
               type="button"
               onClick={() => setIsFlipped(true)}
               className="rounded-full border border-[#bf1b59] px-5 py-2 font-subheading text-sm font-semibold text-[#bf1b59] transition-all duration-500 [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:bg-[#bf1b59] hover:text-white"
+              style={{ touchAction: "manipulation" }}
             >
               {detailLabel}
             </button>
@@ -131,13 +153,13 @@ export function ProgramCard({
 
         <motion.div
           initial={false}
-          animate={{ rotateY: isFlipped ? 0 : -180, opacity: isFlipped ? 1 : 0 }}
-          transition={{ duration: 0.68, ease: [0.22, 1, 0.36, 1] }}
+          animate={{ rotateY: backRotateY, opacity: isFlipped ? 1 : 0 }}
+          transition={flipTransition}
           style={{
-            transformStyle: "preserve-3d",
-            WebkitTransformStyle: "preserve-3d",
-            backfaceVisibility: "hidden",
-            WebkitBackfaceVisibility: "hidden",
+            transformStyle: isMobile ? "flat" : "preserve-3d",
+            WebkitTransformStyle: isMobile ? "flat" : "preserve-3d",
+            backfaceVisibility: isMobile ? "visible" : "hidden",
+            WebkitBackfaceVisibility: isMobile ? "visible" : "hidden",
             transformOrigin: "center center",
             pointerEvents: isFlipped ? "auto" : "none",
             willChange: "transform, opacity",
@@ -189,6 +211,7 @@ export function ProgramCard({
               type="button"
               onClick={() => setIsFlipped(false)}
               className="rounded-full border border-[#f4f8de]/40 px-5 py-2 font-subheading text-sm font-semibold text-[#f4f8de] transition-all duration-500 [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:border-[#f4f8de] hover:bg-[#f4f8de] hover:text-[#701732]"
+              style={{ touchAction: "manipulation" }}
             >
               {backLabel}
             </button>

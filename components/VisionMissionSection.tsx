@@ -49,7 +49,7 @@ export default function VisionMissionSection() {
           >
             <motion.div
               {...reveal("left", 0.08)}
-              className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-white/16"
+              className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-[var(--olive-light)]/30 text-[var(--olive-dark)]"
             >
               <Target className="h-8 w-8" />
             </motion.div>

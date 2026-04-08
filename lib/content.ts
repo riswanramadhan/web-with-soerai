@@ -201,12 +201,66 @@ const programsId: ProgramCardContent[] = [
   },
 ];
 
-const programsEn: ProgramCardContent[] = programsId.map((program) => ({
-  ...program,
-  highlights: [...program.highlights],
-  outputs: [...program.outputs],
-  outcomes: [...program.outcomes],
-}));
+const programsEn: ProgramCardContent[] = [
+  {
+    id: "program-1",
+    title: "WITH VISION",
+    subtitle: "Personal Career & Self Discovery Consulting",
+    description:
+      "Two expert consultation sessions are held at the beginning and end of the program. Participants complete a personal assessment to identify strengths, interests, and career fit. The approach is tailored to each participant so the results are more relevant and personal.",
+    highlights: ["Program 01"],
+    outputs: [
+      "Individual assessment results",
+      "Recommendations for personal development and career direction",
+      "Initial and final personal development plan",
+    ],
+    outcomes: [
+      ">= 90% of participants attend both initial and final consultation sessions",
+      ">= 80% of participants complete a personal development plan",
+      ">= 70% of participants show improved career clarity",
+    ],
+    indicator: "Program 01",
+  },
+  {
+    id: "program-2",
+    title: "WITH STRATEGY",
+    subtitle: "Leadership & Personal Growth Mentorship",
+    description:
+      "Intensive mentoring with curated mentors from WITH SOERAI. It provides a safe space to discuss academic, personal growth, and career challenges, supported by modules, expert sessions, and an activity tracker in every meeting.",
+    highlights: ["Program 02"],
+    outputs: [
+      "Regular mentoring sessions conducted",
+      "Activity tracker consistently completed",
+      "Expert sharing sessions delivered",
+      "Participants' personal development action plan",
+    ],
+    outcomes: [
+      ">= 80% participant attendance in mentoring sessions",
+      ">= 75% of participants consistently fill out the activity tracker",
+      ">= 70% of participants show improvement in soft skills",
+    ],
+    indicator: "Program 02",
+  },
+  {
+    id: "program-3",
+    title: "WITH IMPACT",
+    subtitle: "Community Project Implementation",
+    description:
+      "An implementation phase where participants turn ideas into real projects, especially for women's empowerment. Participants contribute directly by designing solutions for local issues in their surrounding communities.",
+    highlights: ["Program 03"],
+    outputs: [
+      "Social projects implemented (individual/group)",
+      "Activity documentation and reports",
+      "Collaboration with local communities and stakeholders",
+    ],
+    outcomes: [
+      ">= 70% of participants/groups successfully execute a project",
+      ">= 60% of projects have sustainability potential",
+      "Community satisfaction level toward the program",
+    ],
+    indicator: "Program 03",
+  },
+];
 
 export const content: Record<LanguageCode, SiteContent> = {
   id: {

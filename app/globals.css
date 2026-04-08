@@ -301,6 +301,38 @@ section {
   pointer-events: none;
 }
 
+.neon-orbit-border {
+  position: relative;
+  isolation: isolate;
+}
+
+.neon-orbit-border::before {
+  content: "";
+  position: absolute;
+  inset: -105%;
+  z-index: 0;
+  background: conic-gradient(
+    from 0deg,
+    rgba(226, 106, 138, 0.95),
+    rgba(171, 176, 57, 0.95),
+    rgba(191, 27, 89, 0.98),
+    rgba(244, 248, 222, 0.82),
+    rgba(226, 106, 138, 0.95)
+  );
+  filter: drop-shadow(0 0 14px rgba(226, 106, 138, 0.65));
+  animation: spin-slow 8s linear infinite;
+}
+
+.neon-orbit-border::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  z-index: 0;
+  border-radius: inherit;
+  background: rgba(244, 248, 222, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(244, 248, 222, 0.38);
+}
+
 .deco-starburst {
   animation: spin-slow 14s linear infinite;
   filter: drop-shadow(0 0 12px rgba(226, 106, 138, 0.55));

@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 import { useContent } from "@/context/LanguageContext";
 import BotanicalDeco from "@/components/BotanicalDeco";
 import { useStableReducedMotion } from "@/lib/useStableReducedMotion";
@@ -15,6 +17,17 @@ const SCROLL_VIEWPORT = {
   once: true,
   margin: "-100px",
 } as const;
+
+const HERO_SLIDES = [
+  {
+    src: "/images/hero-image-1.jpg",
+    alt: "WITH SOERAI Hero Collage 1",
+  },
+  {
+    src: "/images/hero-image-2.jpg",
+    alt: "WITH SOERAI Hero Collage 2",
+  },
+] as const;
 
 function Starburst({ className = "" }: { className?: string }) {
   return (
@@ -38,6 +51,21 @@ function Starburst({ className = "" }: { className?: string }) {
 export default function HeroSection() {
   const content = useContent();
   const reduceMotion = useStableReducedMotion();
+  const [activeHeroSlide, setActiveHeroSlide] = useState(0);
+
+  useEffect(() => {
+    if (HERO_SLIDES.length < 2) {
+      return;
+    }
+
+    const slideInterval = window.setInterval(() => {
+      setActiveHeroSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+    }, reduceMotion ? 5200 : 3600);
+
+    return () => {
+      window.clearInterval(slideInterval);
+    };
+  }, [reduceMotion]);
 
   const fadeInLeft = {
     initial: reduceMotion ? { opacity: 1, x: 0 } : { opacity: 0, x: -60 },
@@ -170,12 +198,50 @@ export default function HeroSection() {
           viewport={SCROLL_VIEWPORT}
           className="interactive-card relative mx-auto w-full max-w-[560px] rounded-[2rem] border border-[rgba(112,23,50,0.18)] bg-[linear-gradient(140deg,rgba(255,255,255,0.68),rgba(244,248,222,0.85))] p-4 shadow-[0_20px_40px_rgba(112,23,50,0.14)]"
         >
-          <div className="deco-botanical relative grid min-h-[360px] place-items-center overflow-hidden rounded-[1.5rem] border-2 border-dashed border-[var(--pink-light)]/70 bg-[radial-gradient(circle_at_20%_20%,rgba(226,106,138,0.22),transparent_35%),radial-gradient(circle_at_80%_30%,rgba(171,176,57,0.24),transparent_38%),rgba(244,248,222,0.9)] px-6 py-10 text-center">
-            <div className="deco-starburst absolute left-8 top-8 h-10 w-10" />
-            <div className="deco-starburst absolute bottom-10 right-10 h-12 w-12" />
-            <p className="font-subheading text-sm font-semibold uppercase tracking-[0.14em] text-[var(--pink-primary)]/85">
-              {content.hero.collageLabel}
-            </p>
+          <div className="neon-orbit-border relative min-h-[360px] overflow-hidden rounded-[1.5rem] p-[3px]">
+            <div className="relative z-10 min-h-[354px] overflow-hidden rounded-[1.32rem] bg-[#ecefce]">
+              <motion.div
+                animate={{ x: `${-activeHeroSlide * 100}%` }}
+                transition={{
+                  duration: reduceMotion ? 0.45 : 0.85,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="flex h-full min-h-[354px]"
+              >
+                {HERO_SLIDES.map((slide) => (
+                  <div key={slide.src} className="relative h-auto min-h-[354px] min-w-full">
+                    <Image
+                      src={slide.src}
+                      alt={slide.alt}
+                      fill
+                      sizes="(min-width: 1024px) 32vw, (min-width: 640px) 62vw, 88vw"
+                      className="object-cover object-center"
+                      priority
+                    />
+                  </div>
+                ))}
+              </motion.div>
+
+              <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(112,23,50,0.06)_0%,transparent_30%,rgba(112,23,50,0.2)_100%)]" />
+
+              <div className="absolute bottom-4 left-1/2 z-20 flex -translate-x-1/2 items-center justify-center gap-2.5 rounded-full bg-[rgba(112,23,50,0.22)] px-3 py-1.5 backdrop-blur-[1px]">
+                {HERO_SLIDES.map((slide, index) => (
+                  <button
+                    key={slide.src}
+                    type="button"
+                    onClick={() => setActiveHeroSlide(index)}
+                    aria-label={`Go to hero slide ${index + 1}`}
+                    className={`inline-flex h-3.5 w-3.5 items-center justify-center rounded-full border transition ${
+                      activeHeroSlide === index
+                        ? "border-[var(--pink-primary)] bg-[var(--pink-primary)] shadow-[0_0_10px_rgba(226,106,138,0.7)]"
+                        : "border-[rgba(244,248,222,0.86)] bg-[rgba(244,248,222,0.55)]"
+                    }`}
+                  >
+                    <span className="h-1.5 w-1.5 rounded-full bg-white/90" />
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>

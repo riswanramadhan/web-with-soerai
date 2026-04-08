@@ -7,6 +7,12 @@ export interface MemberProfile {
   roleEn: string;
   type: MemberType;
   imagePlaceholder: string;
+  majorId?: string;
+  majorEn?: string;
+  universityId?: string;
+  universityEn?: string;
+  achievementsId?: string[];
+  achievementsEn?: string[];
 }
 
 export const members: MemberProfile[] = [
@@ -45,7 +51,7 @@ export const members: MemberProfile[] = [
   {
     id: "m-01",
     name: "Annisa A Maharani",
-    roleId: "Secretary",
+    roleId: "Sekretaris",
     roleEn: "Secretary",
     type: "member",
     imagePlaceholder: "/images/members/Annisa A Maharani_Secretary.JPG",
@@ -141,8 +147,8 @@ export const members: MemberProfile[] = [
   {
     id: "m-13",
     name: "Nurul Marasabessy",
-    roleId: "Staff RE",
-    roleEn: "Staff RE",
+    roleId: "Staff R&E",
+    roleEn: "Staff R&E",
     type: "member",
     imagePlaceholder: "/images/members/Nurul Marasabessy_Staff RE.JPG",
   },
@@ -153,5 +159,131 @@ export const members: MemberProfile[] = [
     roleEn: "Staff R&E",
     type: "member",
     imagePlaceholder: "/images/members/Sabina J. Tutupoho_Staff R&E.JPG",
+  },
+  {
+    id: "m-15",
+    name: "Dinah Zhafirah",
+    roleId: "Staff HRD",
+    roleEn: "Staff HRD",
+    type: "member",
+    imagePlaceholder: "/images/members/Dinah Zhafirah_Staff HRD.JPG",
+  },
+  {
+    id: "m-16",
+    name: "Vashajadyah A F Ahmad",
+    roleId: "Head Of Program",
+    roleEn: "Head Of Program",
+    type: "member",
+    imagePlaceholder: "/images/members/Vashajadyah A F Ahmad_Head Of Program.JPG",
+  },
+  {
+    id: "m-17",
+    name: "Ikha Hilwa R. Khaliky",
+    roleId: "Staff Media",
+    roleEn: "Staff Media",
+    type: "member",
+    imagePlaceholder: "/images/members/IKHA Hilwa R. Khaliky_ Staff Media.JPG",
+  },
+  {
+    id: "mentor-01",
+    name: "Arifah Deswina",
+    roleId: "Mentor",
+    roleEn: "Mentor",
+    type: "mentor",
+    imagePlaceholder: "/images/mentors/Arifah Deswina_Mentor.png",
+    majorId: "Teknik Informatika",
+    majorEn: "Informatics Engineering",
+    universityId: "Universitas Hasanuddin",
+    universityEn: "Hasanuddin University",
+    achievementsId: [
+      "Awardee Young Leaders for Indonesia (YLI) Wave 17 by Mckinsey & Co.",
+      "Awardee beasiswa riset Badan Amil Zakat Nasional (BAZNAS) 2025-2026",
+      "The Generation IMPACT Student Ambassador by Schneider Electric 2024-2025",
+    ],
+    achievementsEn: [
+      "Awardee Young Leaders for Indonesia (YLI) Wave 17 by Mckinsey & Co.",
+      "Awardee of the BAZNAS research scholarship 2025-2026",
+      "The Generation IMPACT Student Ambassador by Schneider Electric 2024-2025",
+    ],
+  },
+  {
+    id: "mentor-02",
+    name: "Zikra Nagasuri",
+    roleId: "Mentor",
+    roleEn: "Mentor",
+    type: "mentor",
+    imagePlaceholder: "/images/mentors/Zikra Nagasuri_Mentor.png",
+    majorId: "Teknik Lingkungan",
+    majorEn: "Environmental Engineering",
+    universityId: "Universitas Hasanuddin",
+    universityEn: "Hasanuddin University",
+    achievementsId: [
+      "Participant of Pre-ETIC Program – Kanazawa University, Japan & Awardee of JASSO Scholarship (2025/2026)", 
+      "1st Place Winner – Scientific Writing Competition HLHS, PT IMIP (2025)",
+      "Funded Research Awardee – PKM-RE (Program Kreativitas Mahasiswa – Riset Eksakta) (2024)",
+    ],
+    achievementsEn: [
+      "Participant of Pre-ETIC Program – Kanazawa University, Japan & Awardee of JASSO Scholarship (2025/2026)", 
+      "1st Place Winner – Scientific Writing Competition HLHS, PT IMIP (2025)",
+      "Funded Research Awardee – PKM-RE (Program Kreativitas Mahasiswa – Riset Eksakta) (2024)",
+    ],
+  },
+  {
+    id: "mentor-03",
+    name: "Khadija Karepesina",
+    roleId: "Mentor",
+    roleEn: "Mentor",
+    type: "mentor",
+    imagePlaceholder: "/images/mentors/Arifah Deswina_Mentor.png",
+    majorId: "Dummy Major",
+    majorEn: "Dummy Major",
+    universityId: "Universitas Pattimura",
+    universityEn: "Pattimura University",
+    achievementsId: [
+      "Google Ambassador", 
+      "Mapres Unpattimurra",
+      "PMM Batch 4",
+    ],
+    achievementsEn:  [
+      "Google Ambassador", 
+      "Mapres Unpattimurra",
+      "PMM Batch 4",
+    ],
+  },
+  {
+    id: "mentor-04",
+    name: "Renny Rosa",
+    roleId: "Mentor",
+    roleEn: "Mentor",
+    type: "mentor",
+    imagePlaceholder: "/images/mentors/Renny Rosa_Mentor.png",
+    majorId: "Hubungan Internasional",
+    majorEn: "International Relations",
+    universityId: "Universitas Kristen Indonesia",
+    universityEn: "Universitas Kristen Indonesia",
+    achievementsId: [
+      "Regional Women's Committee WSCF AP (2025-2027)",
+      "Pembicara dalam Seminar 'Jaga Perempuan Indonesia' sub tema : “Merekam Jejak Perempuan Merebut Ruang dan Partisipasi Publik di Indonesia: Dari Kolonialisme hingga Era Digital” oleh DPP BMI Tahun 2026",
+      "Pelatihan Fasilitator Perempuan dengan Tema 'Ruang Aman untuk Perempuan' DPP GAMKI Tahun 2025",
+    ],
+    achievementsEn: [
+      "Regional Women's Committee, WSCF AP (2025–2027)",
+      "Speaker at the 'Protect Indonesian Women' (Jaga Perempuan Indonesia) Seminar; Sub-theme: “Tracing Women’s Footsteps in Reclaiming Space and Public Participation in Indonesia: From Colonialism to the Digital Era,” organized by the BMI Central Board (2026)",
+      "Women’s Facilitator Training; Theme: “Safe Spaces for Women,” organized by the GAMKI Central Board (2025)",
+    ],
+  },
+  {
+    id: "mentor-05",
+    name: "Mentor Dummy 04",
+    roleId: "Mentor",
+    roleEn: "Mentor",
+    type: "mentor",
+    imagePlaceholder: "/images/mentors/Arifah Deswina_Mentor.png",
+    majorId: "Dummy Major",
+    majorEn: "Dummy Major",
+    universityId: "Dummy University",
+    universityEn: "Dummy University",
+    achievementsId: ["Dummy achievement 1", "Dummy achievement 2"],
+    achievementsEn: ["Dummy achievement 1", "Dummy achievement 2"],
   },
 ];
