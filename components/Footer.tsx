@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
 import { useContent } from "@/context/LanguageContext";
+import { EXTERNAL_LINKS } from "@/lib/links";
 import Logo from "@/components/Logo";
 import { useStableReducedMotion } from "@/lib/useStableReducedMotion";
 import dekatLokalLogo from "../public/image/dekatlokal.png";
@@ -52,6 +53,27 @@ function TikTokIcon({ size = 17 }: { size?: number }) {
       fill="currentColor"
     >
       <path d="M15.6 3.2c.6 1.8 1.7 2.9 3.4 3.4v2.6a8 8 0 0 1-3.2-.8v5.7a5.5 5.5 0 1 1-5.5-5.5c.3 0 .7 0 1 .1V11a3 3 0 1 0 2 2.8V3.2h2.3Z" />
+    </svg>
+  );
+}
+
+function LinkedInIcon({ size = 17 }: { size?: number }) {
+  return (
+    <svg
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.9"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V9h4v2" />
+      <rect x="2" y="9" width="4" height="12" />
+      <circle cx="4" cy="4" r="2" fill="currentColor" stroke="none" />
     </svg>
   );
 }
@@ -109,7 +131,7 @@ export default function Footer() {
           <div className="mt-5 flex items-center justify-start gap-3">
             <motion.a
               aria-label={content.footer.socials.instagram}
-              href="https://instagram.com/withsoerai"
+              href={EXTERNAL_LINKS.withSoeraiInstagram}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{
@@ -125,7 +147,7 @@ export default function Footer() {
             </motion.a>
             <motion.a
               aria-label="TikTok"
-              href="https://tiktok.com/@withsoerai"
+              href={EXTERNAL_LINKS.withSoeraiTikTok}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{
@@ -138,6 +160,22 @@ export default function Footer() {
               className="grid size-10 place-items-center rounded-full bg-[var(--cream)] text-[#701732] shadow-[0_10px_20px_rgba(0,0,0,0.2)]"
             >
               <TikTokIcon size={17} />
+            </motion.a>
+            <motion.a
+              aria-label={content.footer.socials.linkedin}
+              href={EXTERNAL_LINKS.withSoeraiLinkedIn}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{
+                y: [0, -7, 0],
+                scale: [1, 1.1, 1],
+                color: "#bf1b59",
+              }}
+              whileTap={{ scale: 0.94 }}
+              transition={{ duration: 0.5, ease: EASING }}
+              className="grid size-10 place-items-center rounded-full bg-[var(--cream)] text-[#701732] shadow-[0_10px_20px_rgba(0,0,0,0.2)]"
+            >
+              <LinkedInIcon size={17} />
             </motion.a>
             <motion.a
               aria-label={content.footer.socials.email}
@@ -173,7 +211,7 @@ export default function Footer() {
               Partner Digital
             </h4>
             <a
-              href="https://instagram.com/dekatlokal"
+              href={EXTERNAL_LINKS.dekatLokalInstagram}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-3 inline-block"
@@ -201,7 +239,7 @@ export default function Footer() {
         <p className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-center gap-x-1.5 gap-y-1 text-center">
           <span>© 2026 With Soerai. All Rights Reserved | Powered by</span>
           <a
-            href="https://instagram.com/dekatlokal"
+            href={EXTERNAL_LINKS.dekatLokalInstagram}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center font-semibold underline decoration-[1.5px] underline-offset-[3px] transition-colors hover:text-[var(--pink-primary)]"

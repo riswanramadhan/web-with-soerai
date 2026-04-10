@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useContent } from "@/context/LanguageContext";
 import BotanicalDeco from "@/components/BotanicalDeco";
+import { EXTERNAL_LINKS } from "@/lib/links";
 import { useStableReducedMotion } from "@/lib/useStableReducedMotion";
 
 const SCROLL_SPRING = {
@@ -177,7 +178,9 @@ export default function HeroSection() {
             className="mt-8 flex flex-wrap gap-3"
           >
             <a
-              href="#program"
+              href={EXTERNAL_LINKS.registrationForm}
+              target="_blank"
+              rel="noopener noreferrer"
               className="cta-gradient-btn px-6 py-3 font-subheading text-sm font-semibold tracking-[0.09em]"
             >
               {content.hero.ctaPrimary}

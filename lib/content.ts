@@ -291,7 +291,7 @@ export const content: Record<LanguageCode, SiteContent> = {
       headline: ["Perempuan yang", "Menyala", "Bersama."],
       subtext:
         "Woman Illuminating Through Harmony. Kami mendampingi perempuan muda Indonesia Timur untuk tumbuh percaya diri, berdaya, dan siap memimpin perubahan di komunitasnya.",
-      ctaPrimary: "Jelajahi Program",
+      ctaPrimary: "Bergabung Sekarang",
       ctaSecondary: "Tentang Kami",
       collageLabel: "[ Botanical Image Collage - Y2K ]",
     },
@@ -361,14 +361,14 @@ export const content: Record<LanguageCode, SiteContent> = {
         "Kolaborasi lintas divisi untuk memastikan setiap program berjalan berdampak dan berkelanjutan.",
       president: {
         role: "PRESIDENT",
-        name: "Rizkiyah Ananda",
+        name: "Rizkiyah Ananda Mutmainnah",
       },
       secretary: {
-        role: "SECRETARY",
-        name: "Annisa Aulia Maharani Mutmainnah",
+        role: "SEKRETARIS",
+        name: "Annisa Aulia Maharani",
       },
       treasurer: {
-        role: "TREASURER",
+        role: "BENDAHARA",
         name: "Nur Qalby Salsabila",
       },
       liaison: {
@@ -387,7 +387,7 @@ export const content: Record<LanguageCode, SiteContent> = {
           members: [
             "Aulia Khairunnisa Isman",
             "Najwa Putri Larasati",
-            "Nasywa Elysia APSARI",
+            "Nasywa Elysia Apsari",
             "Ikha Hilwa R Khaliky",
             "Nur Fadilah S. Jaga",
           ],
@@ -440,7 +440,7 @@ export const content: Record<LanguageCode, SiteContent> = {
       missionLine:
         "Mendampingi perempuan muda Indonesia Timur melalui pembelajaran, mentorship, dan kepemimpinan komunitas.",
       location: "Indonesia Timur",
-      email: "halo@withsoerai.org",
+      email: "withsoerai@gmail.com",
       socials: {
         instagram: "Instagram",
         linkedin: "LinkedIn",
@@ -477,7 +477,7 @@ export const content: Record<LanguageCode, SiteContent> = {
       headline: ["Women Who", "Illuminate", "Together."],
       subtext:
         "Woman Illuminating Through Harmony. We support young women in Eastern Indonesia to build confidence, strengthen their skills, and lead change in their communities.",
-      ctaPrimary: "Explore Programs",
+      ctaPrimary: "Join Now",
       ctaSecondary: "About Us",
       collageLabel: "[ Botanical Image Collage - Y2K ]",
     },
@@ -547,11 +547,11 @@ export const content: Record<LanguageCode, SiteContent> = {
         "Cross-functional collaboration that keeps every program impactful and sustainable.",
       president: {
         role: "PRESIDENT",
-        name: "Rizkiyah Ananda",
+        name: "Rizkiyah Ananda Mutmainnah",
       },
       secretary: {
         role: "SECRETARY",
-        name: "Annisa Aulia Maharani Mutmainnah",
+        name: "Annisa Aulia Maharani",
       },
       treasurer: {
         role: "TREASURER",
@@ -573,7 +573,7 @@ export const content: Record<LanguageCode, SiteContent> = {
           members: [
             "Aulia Khairunnisa Isman",
             "Najwa Putri Larasati",
-            "Nasywa Elysia APSARI",
+            "Nasywa Elysia Apsari",
             "Ikha Hilwa R Khaliky",
             "Nur Fadilah S. Jaga",
           ],
@@ -626,7 +626,7 @@ export const content: Record<LanguageCode, SiteContent> = {
       missionLine:
         "Supporting young women in Eastern Indonesia through learning, mentorship, and community-based leadership.",
       location: "Eastern Indonesia",
-      email: "hello@withsoerai.org",
+      email: "withsoerai@gmail.com",
       socials: {
         instagram: "Instagram",
         linkedin: "LinkedIn",

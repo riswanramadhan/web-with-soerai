@@ -18,7 +18,7 @@ export interface MemberProfile {
 export const members: MemberProfile[] = [
   {
     id: "t-01",
-    name: "Rizkiyah Ananda",
+    name: "Rizkiyah Ananda Mutmainnah",
     roleId: "President",
     roleEn: "President",
     type: "member",
@@ -26,7 +26,7 @@ export const members: MemberProfile[] = [
   },
   {
     id: "t-02",
-    name: "Andi Putri",
+    name: "Andi Putri Cahaya Ningrum",
     roleId: "Head of Media",
     roleEn: "Head of Media",
     type: "member",
@@ -34,7 +34,7 @@ export const members: MemberProfile[] = [
   },
   {
     id: "t-03",
-    name: "Andi Shifa Salsabillah",
+    name: "Andi Shifa Salsabilla",
     roleId: "Head Of HRD",
     roleEn: "Head Of HRD",
     type: "member",
@@ -42,7 +42,7 @@ export const members: MemberProfile[] = [
   },
   {
     id: "t-04",
-    name: "Fathinah N Jannah",
+    name: "Fathinah Nur Jannah",
     roleId: "Head Of R&E",
     roleEn: "Head Of R&E",
     type: "member",
@@ -50,7 +50,7 @@ export const members: MemberProfile[] = [
   },
   {
     id: "m-01",
-    name: "Annisa A Maharani",
+    name: "Annisa Aulia Maharani",
     roleId: "Sekretaris",
     roleEn: "Secretary",
     type: "member",
@@ -66,7 +66,7 @@ export const members: MemberProfile[] = [
   },
   {
     id: "m-03",
-    name: "Angel E.Th Manuputty",
+    name: "Angel Eleonor Theophilina Manuputty",
     roleId: "Staff HRD",
     roleEn: "Staff HRD",
     type: "member",
@@ -90,7 +90,7 @@ export const members: MemberProfile[] = [
   },
   {
     id: "m-06",
-    name: "Najwa P Larasati",
+    name: "Najwa Putri Larasati",
     roleId: "Staff Media",
     roleEn: "Staff Media",
     type: "member",
@@ -98,7 +98,7 @@ export const members: MemberProfile[] = [
   },
   {
     id: "m-07",
-    name: "Nasywa E Apsari",
+    name: "Nasywa Elysia Apsari",
     roleId: "Staff Media",
     roleEn: "Staff Media",
     type: "member",
@@ -106,7 +106,7 @@ export const members: MemberProfile[] = [
   },
   {
     id: "m-08",
-    name: "Nur F S Jaga",
+    name: "Nur Fadilah S. Jaga",
     roleId: "Staff Media",
     roleEn: "Staff Media",
     type: "member",
@@ -114,7 +114,7 @@ export const members: MemberProfile[] = [
   },
   {
     id: "m-09",
-    name: "Dhiska D Hermalia H",
+    name: "Dhiska Dwi Hermalia H",
     roleId: "Staff Program",
     roleEn: "Staff Program",
     type: "member",
@@ -138,7 +138,7 @@ export const members: MemberProfile[] = [
   },
   {
     id: "m-12",
-    name: "Shafiyyah N F Salandra",
+    name: "Shafiyyah Nur Fadhilah Salandra",
     roleId: "Staff Program",
     roleEn: "Staff Program",
     type: "member",
@@ -146,7 +146,7 @@ export const members: MemberProfile[] = [
   },
   {
     id: "m-13",
-    name: "Nurul Marasabessy",
+    name: "Nurul Azizah Rahman Marasabessy",
     roleId: "Staff R&E",
     roleEn: "Staff R&E",
     type: "member",
@@ -154,7 +154,7 @@ export const members: MemberProfile[] = [
   },
   {
     id: "m-14",
-    name: "Sabina J. Tutupoho",
+    name: "Sabina Juniar Tutupoho",
     roleId: "Staff R&E",
     roleEn: "Staff R&E",
     type: "member",
@@ -170,7 +170,7 @@ export const members: MemberProfile[] = [
   },
   {
     id: "m-16",
-    name: "Vashajadyah A F Ahmad",
+    name: "Vashajadyah Al Fadillah Ahmad",
     roleId: "Head Of Program",
     roleEn: "Head Of Program",
     type: "member",
@@ -178,7 +178,7 @@ export const members: MemberProfile[] = [
   },
   {
     id: "m-17",
-    name: "Ikha Hilwa R. Khaliky",
+    name: "Ikha Hilwa R Khaliky",
     roleId: "Staff Media",
     roleEn: "Staff Media",
     type: "member",
@@ -234,9 +234,9 @@ export const members: MemberProfile[] = [
     roleId: "Mentor",
     roleEn: "Mentor",
     type: "mentor",
-    imagePlaceholder: "/images/mentors/Arifah Deswina_Mentor.png",
-    majorId: "Dummy Major",
-    majorEn: "Dummy Major",
+    imagePlaceholder: "/images/mentors/Khadija Karapesina_Mentor.png",
+    majorId: "Teknik Indusri",
+    majorEn: "Industrial Engineering",
     universityId: "Universitas Pattimura",
     universityEn: "Pattimura University",
     achievementsId: [
@@ -272,18 +272,5 @@ export const members: MemberProfile[] = [
       "Women’s Facilitator Training; Theme: “Safe Spaces for Women,” organized by the GAMKI Central Board (2025)",
     ],
   },
-  {
-    id: "mentor-05",
-    name: "Mentor Dummy 04",
-    roleId: "Mentor",
-    roleEn: "Mentor",
-    type: "mentor",
-    imagePlaceholder: "/images/mentors/Arifah Deswina_Mentor.png",
-    majorId: "Dummy Major",
-    majorEn: "Dummy Major",
-    universityId: "Dummy University",
-    universityEn: "Dummy University",
-    achievementsId: ["Dummy achievement 1", "Dummy achievement 2"],
-    achievementsEn: ["Dummy achievement 1", "Dummy achievement 2"],
-  },
+  
 ];

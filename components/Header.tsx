@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { useContent } from "@/context/LanguageContext";
 import BackToTop from "./BackToTop";
 import LanguageToggle from "@/components/LanguageToggle";
+import { EXTERNAL_LINKS } from "@/lib/links";
 import Logo from "@/components/Logo";
 
 const MOBILE_LINK_CONTAINER_VARIANTS = {
@@ -257,7 +258,7 @@ export default function Header() {
               <p className="mt-[14px] text-center text-[11px] text-[#576100]">
                 Powered by{" "}
                 <a
-                  href="https://instagram.com/dekatlokal"
+                  href={EXTERNAL_LINKS.dekatLokalInstagram}
                   target="_blank"
                   rel="noopener noreferrer"
                   onMouseEnter={() => setIsPoweredLinkHovered(true)}

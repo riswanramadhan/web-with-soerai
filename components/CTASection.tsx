@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import BotanicalDeco from "@/components/BotanicalDeco";
 import { useContent } from "@/context/LanguageContext";
+import { EXTERNAL_LINKS } from "@/lib/links";
 import { useStableReducedMotion } from "@/lib/useStableReducedMotion";
 
 const SCROLL_SPRING = {
@@ -88,7 +89,9 @@ export default function CTASection() {
           className="mt-8 flex flex-wrap justify-center gap-3"
         >
           <a
-            href="#galeri"
+            href={EXTERNAL_LINKS.registrationForm}
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-full bg-[var(--cream)] px-6 py-3 font-subheading text-sm font-semibold uppercase tracking-[0.09em] text-[var(--pink-primary)] shadow-[0_12px_24px_rgba(0,0,0,0.18)] transition-all duration-500 [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1"
           >
             {content.cta.primary}
